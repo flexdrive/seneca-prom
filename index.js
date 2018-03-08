@@ -26,7 +26,10 @@ function Monitor(options) {
 
   expose(port, host)
 
-  process.on('SIGTERM', () => clearInterval(defaultMetrics))
+  process.on('SIGTERM', () => {
+    clearInterval(defaultMetrics)
+    fastify.close()
+  })
 }
 
 module.exports = Monitor
