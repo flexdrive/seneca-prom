@@ -1,5 +1,5 @@
 {
-  "name": "seneca-prom",
+  "name": "@flexdrive/seneca-prom",
   "version": "1.0.1",
   "description": "Monitoring for seneca service",
   "main": "index.js",
