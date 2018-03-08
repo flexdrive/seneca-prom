@@ -8,6 +8,7 @@ function Monitor(options) {
   const seneca = this
   const host = options.host || DEFAULT_HOST
   const port = options.port || DEFAULT_PORT
+  const log = options.log || seneca.log
 
   const defaultMetrics = Prometheus.collectDefaultMetrics()
 
@@ -20,7 +21,7 @@ function Monitor(options) {
 
     fastify.listen(port, host, function(err) {
       if (err) throw err
-      console.log(`server listening on ${fastify.server.address().port}`)
+      log.info(`server listening on ${fastify.server.address().port}`)
     })
   }
 
